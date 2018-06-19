@@ -14,17 +14,17 @@ module dds_tb;
 	reg sampling_pulse;
 
 	// Outputs
-	wire new_sample_ready;
+	wire sample_ready;
 	wire [15:0] sample;
 
 	// Instantiate the Unit Under Test (UUT)
 	
-	dds  dds_inst (
+	dds  uut(
 		.clk(clk), 
 		.reset(reset), 
 		.k(k), 
 		.sampling_pulse(sampling_pulse), 
-		.new_sample_ready(new_sample_ready), 
+		.sample_ready(sample_ready), 
 		.sample(sample)
 	);
 

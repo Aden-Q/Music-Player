@@ -9,7 +9,7 @@ module Data_process(area,data_a,data_b);
 	output reg [15:0] data_b;
 	
 	always @(area,data_a,data_b) begin
-		if(area==1) data_b = data_a[15:0]+1;
+		if(area==1) data_b = ~data_a[15:0]+1;
 		else data_b = data_a[15:0];
 	end
 endmodule

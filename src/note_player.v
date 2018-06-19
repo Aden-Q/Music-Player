@@ -17,11 +17,11 @@ module note_player(clk,reset,play_enable,note_to_load,duration_to_load,load_new_
 	assign k[21:20]=2'b00;
 	assign k[19:0]=dout;
 	//controler instance
-	note_play_controler(
+	note_player_controler ncontroler(
 						.clk(clk),
 						.reset(reset),
 						.play_enable(play_enable),
-						.load_new_note(load_new_note)
+						.load_new_note(load_new_note),
 						.load(load),
 						.timer_done(timer_done),
 						.timer_clear(timer_clear),

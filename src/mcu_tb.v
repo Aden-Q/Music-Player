@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
 
 ////////////////////////////////////////////////////////////////////////////////
-// Company: zju
-// Engineer:qzc
+// Company: qmj
+// Engineer:zju
 
 ////////////////////////////////////////////////////////////////////////////////
 
-module beat_generator_tb_v;
+module mcu_tb_v;
    parameter delay=10; 
 	// Inputs
 	reg clk;
@@ -14,7 +14,7 @@ module beat_generator_tb_v;
 	reg play_pause;
 	reg next;
 	reg song_done;
-
+	
 	// Outputs
 	wire play;
 	wire [1:0] song;

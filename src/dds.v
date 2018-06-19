@@ -14,13 +14,13 @@ module dds(clk,reset,k,sampling_pulse,sample_ready,sample);
 	full_adder #(.n(22)) adder(.a(raw_addr),
 							   .b(k),
 							   .s(addr),
-							   .ci(0),
+							   .ci(1'b0),
 							   .co()
 							   );
 			
 	//D filp flop
 	D_FFRE #(.width(22)) dffre1(.clk(clk),
-							   .r(rest),
+							   .r(reset),
 							   .en(sampling_pulse),
 							   .d(addr),
 							   .q(raw_addr)
@@ -30,7 +30,7 @@ module dds(clk,reset,k,sampling_pulse,sample_ready,sample);
 	wire area;
 	D_FFR #(.width(1)) dffr1(.clk(clk),
 							.r(reset),
-							.d(raw_addr[21],
+							.d(raw_addr[21]),
 							.q(area)
 							);
 							
@@ -56,7 +56,7 @@ module dds(clk,reset,k,sampling_pulse,sample_ready,sample);
 						
 	//D flip flop
 	D_FFRE #(.width(16)) dffre2(.clk(clk),
-								.r(),
+								.r(reset),
 								.en(sampling_pulse),
 								.d(data),
 								.q(sample)
@@ -64,9 +64,9 @@ module dds(clk,reset,k,sampling_pulse,sample_ready,sample);
 	
 	//D flip flop
 	D_FFR #(.width(1)) dffr2(.clk(clk),
-							 .r(),
+							 .r(reset),
 							 .d(sampling_pulse),
 							 .q(sample_ready)
-							 )
+							 );
 endmodule
 

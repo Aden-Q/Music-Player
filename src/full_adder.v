@@ -10,8 +10,7 @@ module full_adder(a,b,s,ci,co);
 	input ci;
 	output co;
 	
-	integer il
-	reg [n-1:0] s;
+	integer i;
 	reg [n:0] c;
 	
 	assign co = c[n];

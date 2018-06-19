@@ -18,30 +18,30 @@ module song_reader_controler(clk,reset,note_done,play,new_note);
 			case(state)
 				RESET: begin
 					state <= NEW_NOTE;
-					new_node <= 1;
+					new_note <= 1;
 				end
 				NEW_NOTE: begin
 					state <= WAIT;
-					new_node <= 0;
+					new_note <= 0;
 				end
 				WAIT: begin
 					begin if(note_done)
 						state <= NEXT_NOTE;
-						new_node <= 0;
+						new_note <= 0;
 					end
 				end	
 				NEXT_NOTE: begin
 					state <= NEW_NOTE;
-					new_node <= 1;
+					new_note <= 1;
 				end
 				default: begin
-					state <= RESET, new_note <=0;
+					state <= RESET; new_note <=0;
 				end	
 			endcase
 		end
 		else begin
-			state <= RESET
-			new_node <= 0;
+			state <= RESET;
+			new_note <= 0;
 		end
 	end
 endmodule
