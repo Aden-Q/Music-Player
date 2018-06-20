@@ -1,0 +1,18 @@
+////////////////////////////////////////////////////////////////////////////////
+// Company: zju
+// Engineer:qzc
+////////////////////////////////////////////////////////////////////////////////
+
+module note_end(clk,in,out);
+	input clk,in;
+	output out;
+	wire last;
+	
+	D_FFR latch(.clk(clk),
+				.r(0),
+				.d(in),
+				.q(last)
+				);
+				
+	assign out = ~last && in;		//用前一个值和后一个值来判断结束，因为信号可能占多个时钟周期
+endmodule

@@ -11,8 +11,7 @@ set_property PACKAGE_PIN V5 [get_ports SDA]
 set_property IOSTANDARD LVCMOS33 [get_ports SDA]
 set_property PACKAGE_PIN T4 [get_ports ADC_SDATA]
 set_property IOSTANDARD LVCMOS33 [get_ports ADC_SDATA]
-set_property PACKAGE_PIN B22 [get_ports reset]
-set_property IOSTANDARD LVCMOS33 [get_ports reset]
+
 set_property PACKAGE_PIN R4 [get_ports clk]
 set_property IOSTANDARD LVCMOS33 [get_ports clk]
 set_property PACKAGE_PIN T5 [get_ports BCLK]
@@ -30,3 +29,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports {song[1]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {song[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports play]
 set_property IOSTANDARD LVCMOS33 [get_ports play_button]
+
+set_property PACKAGE_PIN B22 [get_ports reset]
+
+set_property IOSTANDARD LVCMOS33 [get_ports reset]
